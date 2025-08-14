@@ -1,0 +1,251 @@
+/* SignupModal.css - modern modal styling */
+.qc-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.qc-modal {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 420px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: qc-modal-in 0.3s cubic-bezier(.4,2,.6,1) both;
+}
+
+@keyframes qc-modal-in {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.qc-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.qc-modal-close:hover {
+  color: #f1641e;
+}
+
+.qc-modal h2 {
+  margin: 0 0 1.5rem 0;
+  color: #222;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Mode Toggle */
+.qc-mode-toggle {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.qc-toggle-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.qc-toggle-btn.active {
+  background: white;
+  color: #f1641e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Account Type Selection */
+.qc-account-type {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.qc-radio-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.qc-radio-label:hover {
+  background: rgba(241, 100, 30, 0.1);
+}
+
+.qc-radio-label input[type="radio"] {
+  display: none;
+}
+
+.qc-radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.qc-radio-label input[type="radio"]:checked + .qc-radio-custom {
+  border-color: #f1641e;
+  background: #f1641e;
+}
+
+.qc-radio-label input[type="radio"]:checked + .qc-radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Error Message */
+.qc-error-message {
+  background: #fee;
+  color: #c33;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border-left: 4px solid #c33;
+}
+
+/* Form */
+.qc-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.qc-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.qc-auth-form label {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.qc-auth-form input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  transition: border-color 0.2s;
+}
+
+.qc-auth-form input:focus {
+  outline: none;
+  border-color: #f1641e;
+}
+
+.qc-modal-submit {
+  background: #f1641e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+
+.qc-modal-submit:hover:not(:disabled) {
+  background: #d4571c;
+  transform: translateY(-1px);
+}
+
+.qc-modal-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.qc-modal-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.qc-link-btn {
+  background: none;
+  border: none;
+  color: #f1641e;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  padding: 0;
+  font-size: inherit;
+}
+
+.qc-link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .qc-modal {
+    min-width: 90vw;
+    padding: 2rem 1.5rem;
+  }
+  
+  .qc-name-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .qc-account-type {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .qc-modal h2 {
+    font-size: 1.3rem;
+  }
+}
